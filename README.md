@@ -64,3 +64,13 @@
     - Testing and debugging
     - Reproducible results
     - Consistent user experiences
+
+## OpenAI Tools
+
+- ChatGPT can't access data in real time
+  - ex. What date is today?
+  - ex. How is the weather outside?
+- Solution: OpenAI tools. Newer models can invoke functions.
+  - Can access data in real time
+  - Can modify data
+  - Act like a real assistant (not limited by its training data)
