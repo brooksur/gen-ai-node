@@ -44,13 +44,13 @@ class Chat {
     const userMessage: ChatMessage = {
       role: 'user',
       content: message,
-      tokens: this.calculateTookens(message),
+      tokens: this.calculateTokens(message),
     }
 
     const assistantMessage: ChatMessage = {
       role: 'assistant',
       content: response.choices[0].message.content ?? '',
-      tokens: this.calculateTookens(response.choices[0].message.content ?? ''),
+      tokens: this.calculateTokens(response.choices[0].message.content ?? ''),
     }
 
     this.addToHistory([userMessage, assistantMessage])
@@ -58,9 +58,10 @@ class Chat {
     return assistantMessage.content
   }
 
-  calculateTookens(message: string) {
+  calculateTokens(message: string) {
     const encoder = encodingForModel('gpt-4o-mini')
     const encoded = encoder.encode(message)
+    console.log(message, 'tokens', encoded)
     return encoded.length
   }
 
