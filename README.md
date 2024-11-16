@@ -67,10 +67,99 @@
 
 ## OpenAI Tools
 
-- ChatGPT can't access data in real time
-  - ex. What date is today?
-  - ex. How is the weather outside?
-- Solution: OpenAI tools. Newer models can invoke functions.
-  - Can access data in real time
-  - Can modify data
-  - Act like a real assistant (not limited by its training data)
+- Function calling capability for AI models
+  - Allows models to interact with external functions
+  - Enables real-time data access and modifications
+  - Supports complex workflows and automation
+- Common use cases:
+  - Real-time data retrieval (weather, time, stocks)
+  - Database operations (query, update, delete)
+  - API interactions
+  - File system operations
+  - External service integration
+- Implementation components:
+  - Function definitions: JSON schema describing available tools
+  - Function parameters: Input requirements for each tool
+  - Return values: Expected output format
+- Supported models:
+  - GPT-4 and GPT-4 Turbo
+  - GPT-3.5 Turbo
+  - Claude (via Anthropic)
+- Benefits:
+  - Enhanced AI capabilities beyond training data
+  - Real-world interaction and data manipulation
+  - Automated decision-making and actions
+  - Customizable tool integration
+- Best practices:
+  - Clear function documentation
+  - Input validation and error handling
+  - Rate limiting for external services
+  - Security considerations for sensitive operations
+  - Logging and monitoring of tool usage
+
+## Images
+
+- DALL-E API capabilities:
+  - Image generation from text prompts
+  - Image variations from existing images
+  - Image editing with masks and prompts
+- Key parameters:
+  - model: DALL-E version (e.g., 'dall-e-2')
+  - size: Output dimensions (e.g., '1024x1024')
+  - style: Image style ('natural' or 'vivid')
+  - n: Number of images to generate
+  - response_format: Output format ('url' or 'b64_json')
+- Common operations:
+  - Generate new images from text descriptions
+  - Create variations of existing images
+  - Edit images using masks and prompts
+  - Save and manage image outputs
+- Implementation considerations:
+  - Base64 encoding for image data
+  - File system operations for saving images
+  - Error handling for failed generations
+  - Input validation for image files
+- Best practices:
+  - Store API key securely in environment variables
+  - Handle large image files efficiently
+  - Implement proper error handling
+  - Use appropriate file formats (PNG recommended)
+  - Validate input images and masks
+- Cost considerations:
+  - Pricing varies by image size
+  - Different rates for generation vs editing
+  - Multiple images increase costs linearly
+  - Consider caching for repeated requests
+
+## Audio and Speech
+
+- OpenAI Audio API capabilities:
+  - Text-to-Speech (TTS) generation
+  - Speech-to-Text transcription
+  - Audio translation to English
+- Speech models and features:
+  - TTS-1: Text-to-speech model
+  - Whisper-1: Speech recognition model
+  - Voice options: alloy, echo, fable, onyx, nova, shimmer
+  - Multiple audio format support (mp3, opus, aac, flac)
+- Key operations:
+  - Generate speech from text input
+  - Transcribe audio files to text
+  - Translate foreign language audio to English text
+  - Save and process audio files
+- Implementation components:
+  - File system operations for audio handling
+  - Stream processing for large files
+  - Buffer manipulation for audio data
+  - Format conversion and storage
+- Best practices:
+  - Handle audio files efficiently
+  - Validate input text and audio files
+  - Implement proper error handling
+  - Use appropriate audio formats
+  - Consider file size limitations
+- Cost considerations:
+  - TTS pricing per character
+  - Transcription/translation pricing per minute
+  - Different rates for different models
+  - Input length limitations
