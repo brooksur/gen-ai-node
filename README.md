@@ -163,3 +163,16 @@
   - Transcription/translation pricing per minute
   - Different rates for different models
   - Input length limitations
+
+## Embeddings
+
+- The key to AI
+- Numberical representation of data: text, images, audio, video
+- Text embedding - numerical representation of text
+- Take the form of numbers array (vector)
+- Embedding (latent) space - a space in which similar items are positioned closer to one another than less similar items
+- Ways we can calculate similarity:
+  - Dot product
+  - Cosine similarity
+- Embedding models: a set of algorithms trained to generate embeddings
+- OpenAI has models that are trained to generate embeddings
