@@ -197,3 +197,37 @@
   - Different rates for different models
   - Batch processing more cost effective
   - Storage costs for embedding vectors
+
+## Vectors
+
+- Vector databases for AI applications:
+  - Store and query high-dimensional embeddings
+  - Enable semantic search and similarity matching
+  - Examples: ChromaDB, Pinecone, Weaviate
+- ChromaDB features:
+  - Local and cloud deployment options
+  - Built-in OpenAI embedding support
+  - Collection-based organization
+  - Efficient similarity search
+- Key operations:
+  - Create and manage collections
+  - Add documents with embeddings
+  - Query similar documents
+  - Update and delete vectors
+- Implementation components:
+  - Embedding generation
+  - Collection management
+  - Query processing
+  - Document storage
+- Best practices:
+  - Batch operations for efficiency
+  - Index optimization
+  - Proper error handling
+  - Regular maintenance
+  - Backup strategies
+- Use cases:
+  - Semantic search engines
+  - Recommendation systems
+  - Document similarity
+  - Knowledge bases
+  - Question answering systems
