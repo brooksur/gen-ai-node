@@ -8,7 +8,7 @@ const openai = new OpenAI()
 export async function generateEmbeddings(input: string | string[]) {
   const response = await openai.embeddings.create({
     input,
-    model: 'text-embedding-3-small',
+    model: 'text-embedding-3-large',
   })
 
   return response
@@ -38,11 +38,10 @@ export async function createEmbeddings() {
   saveJSON(dataWithEmbeddings, 'data-embeddings.json')
 }
 
-export async function calculateSimilarities(input: string, em) {
-  const dataWithEmbeddings = loadJSON<DataWithEmbeddings[]>(
-    'data-embeddings.json'
-  )
-
+export async function calculateSimilarities(
+  input: string,
+  dataWithEmbeddings: DataWithEmbeddings[]
+) {
   const inputEmbeddings = (await generateEmbeddings(input)).data[0].embedding
   const similarities: {
     input: string

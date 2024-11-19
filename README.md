@@ -166,13 +166,34 @@
 
 ## Embeddings
 
-- The key to AI
-- Numberical representation of data: text, images, audio, video
-- Text embedding - numerical representation of text
-- Take the form of numbers array (vector)
-- Embedding (latent) space - a space in which similar items are positioned closer to one another than less similar items
-- Ways we can calculate similarity:
-  - Dot product
-  - Cosine similarity
-- Embedding models: a set of algorithms trained to generate embeddings
-- OpenAI has models that are trained to generate embeddings
+- OpenAI Embeddings API capabilities:
+  - Generate embeddings for text input
+  - Support for multiple embedding models
+  - Batch processing of text inputs
+  - Semantic search and similarity matching
+- Embedding models and features:
+  - text-embedding-3-large: Latest text embedding model
+  - text-embedding-3-small: Smaller, faster model
+  - Legacy models: text-embedding-ada-002
+  - Dimensionality options for different use cases
+- Key operations:
+  - Generate embeddings from text
+  - Calculate similarity between embeddings
+  - Perform semantic search
+  - Store and query embedding vectors
+- Implementation components:
+  - Vector storage and indexing
+  - Similarity calculation functions
+  - Batch processing for efficiency
+  - Embedding caching strategies
+- Best practices:
+  - Choose appropriate model for use case
+  - Batch inputs when possible
+  - Implement efficient vector storage
+  - Consider dimensionality tradeoffs
+  - Cache frequently used embeddings
+- Cost considerations:
+  - Pricing per 1K tokens
+  - Different rates for different models
+  - Batch processing more cost effective
+  - Storage costs for embedding vectors
