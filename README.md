@@ -176,3 +176,21 @@
   - Cosine similarity
 - Embedding models: a set of algorithms trained to generate embeddings
 - OpenAI has models that are trained to generate embeddings
+
+## Vector Databases
+
+- A problem that AI application have is efficient data processing, and vector databases help solve this problem
+- Specialized database for storing vectors
+- Handle queries based on similarity as opposed to value matching
+- Hold data + embeddings
+- Uses an embeddings as query parameters
+- Vector databases use a combination of different optimized algorithms
+
+### Chroma DB
+
+- Open source vector database
+- Written in python
+- Can be run in Python or on Docker
+- Using Docker:
+  - `docker pull chromadb/chroma`
+  - `docker run -p 8000:8000 chromadb/chroma`

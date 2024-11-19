@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "name": "Evergreen Valley University",
+    "location": "Portland, Oregon",
+    "founded": 1892,
+    "description": "A liberal arts college known for its innovative environmental science programs and sustainable campus initiatives. Features a 200-acre arboretum and leading research facilities in renewable energy.",
+    "specialties": [
+      "Environmental Science",
+      "Sustainable Engineering",
+      "Marine Biology"
+    ],
+    "studentBody": 12000,
+    "tuition": 42000
+  },
+  {
+    "id": "2",
+    "name": "Metropolitan Institute of Technology",
+    "location": "Chicago, Illinois",
+    "founded": 1923,
+    "description": "Urban research university specializing in computer science and robotics. Home to the Center for Artificial Intelligence Innovation and multiple technology startups founded by alumni.",
+    "specialties": ["Computer Science", "Robotics", "Data Science"],
+    "studentBody": 15000,
+    "tuition": 48000
+  },
+  {
+    "id": "3",
+    "name": "Sunbelt Medical University",
+    "location": "Phoenix, Arizona",
+    "founded": 1965,
+    "description": "Leading medical research institution with state-of-the-art simulation centers and teaching hospitals. Pioneering work in telemedicine and rural healthcare delivery.",
+    "specialties": ["Medicine", "Nursing", "Public Health"],
+    "studentBody": 5000,
+    "tuition": 52000
+  },
+  {
+    "id": "4",
+    "name": "Atlantic Arts Academy",
+    "location": "Providence, Rhode Island",
+    "founded": 1877,
+    "description": "Prestigious fine arts institution known for its contemporary art museum and experimental performance spaces. Alumni include numerous influential artists and designers.",
+    "specialties": ["Fine Arts", "Digital Media", "Performance Art"],
+    "studentBody": 3200,
+    "tuition": 45000
+  },
+  {
+    "id": "5",
+    "name": "Midwest Agricultural Sciences University",
+    "location": "Lincoln, Nebraska",
+    "founded": 1901,
+    "description": "Land-grant university focused on agricultural innovation and food science. Houses extensive research farms and leads development in precision agriculture technology.",
+    "specialties": [
+      "Agricultural Science",
+      "Food Technology",
+      "Veterinary Medicine"
+    ],
+    "studentBody": 18000,
+    "tuition": 38000
+  }
+]

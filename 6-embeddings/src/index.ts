@@ -5,7 +5,6 @@ import * as embeddings from './embeddings'
 async function loadIMDBData() {
   // Read and parse the CSV file
   const csvData = fs.readFileSync(path.join(__dirname, 'imdb.csv'), 'utf-8')
-  console.log(csvData)
   const rows = csvData
     .split('\n')
     .filter((row) => row.length > 0)
