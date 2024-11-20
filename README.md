@@ -249,3 +249,47 @@
   - Container exposes port 8000 for API access
 
 ### Pinecone
+
+- Cloud-based vector database service:
+  - Serverless deployment options (AWS, GCP)
+  - High-performance similarity search
+  - Scalable vector storage
+  - Real-time updates and queries
+- Key features:
+  - Index management with dimension specification
+  - Namespace organization
+  - Metadata storage with vectors
+  - Cosine similarity metrics
+  - Top-K nearest neighbor search
+- Implementation components:
+  - Index creation and configuration:
+    ```typescript
+    const pc = new Pinecone({
+      name: 'index-name',
+      dimension: 1536,
+      metric: 'cosine',
+      spec: {
+        serverless: {
+          cloud: 'aws',
+          region: 'us-east-1'
+        }
+      }
+    })
+    ```
+  - Vector operations:
+    - Upsert vectors with metadata
+    - Query vectors by similarity
+    - Namespace management
+    - Batch operations
+- Best practices:
+  - Use appropriate dimension size (1536 for OpenAI embeddings)
+  - Include relevant metadata with vectors
+  - Batch vector operations when possible
+  - Implement proper error handling
+  - Monitor API usage and costs
+- Common use cases:
+  - Semantic search applications
+  - Document similarity matching
+  - Recommendation systems
+  - Knowledge base querying
+  - AI-powered chatbots
