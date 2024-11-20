@@ -231,3 +231,21 @@
   - Document similarity
   - Knowledge bases
   - Question answering systems
+
+### Running ChromaDB with Docker
+
+- Quick setup with Docker:
+  - Pull official ChromaDB image:
+    ```bash
+    docker pull chromadb/chroma
+    ```
+  - Run container with persistent storage:
+    ```bash
+    docker run -d \
+      -p 8000:8000 \
+      -v $(pwd)/chroma_data:/chroma/chroma \
+      chromadb/chroma
+    ```
+  - Container exposes port 8000 for API access
+
+### Pinecone
