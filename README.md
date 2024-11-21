@@ -293,3 +293,17 @@
   - Recommendation systems
   - Knowledge base querying
   - AI-powered chatbots
+
+## LangChain
+
+- LangChain is a framework for building LLM based applications
+- LangChain libraries:
+  - Interface and integration for components
+- Implement Abstractions:
+  - Chains - chain commands
+  - Agents - use an LLM to make decisions
+- Agents:
+  - Decide: identify decision path
+  - Web: (Google, wiki, sport site)
+  - Unstructured answer
+  - LLM
