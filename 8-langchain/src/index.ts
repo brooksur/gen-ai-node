@@ -1,2 +1,2 @@
-import { main } from './rag/basic'
+import { main } from './rag/chroma'
 main()

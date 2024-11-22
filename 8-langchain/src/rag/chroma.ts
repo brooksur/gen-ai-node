@@ -1,31 +1,42 @@
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai'
-import { MemoryVectorStore } from 'langchain/vectorstores/memory'
+import { Chroma } from '@langchain/community/vectorstores/chroma'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
-import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf'
+import path from 'path'
 
 const model = new ChatOpenAI({
   modelName: 'gpt-4o-mini',
   temperature: 0.7
 })
 
-const question = 'What is a mountain donut?'
+const question = 'Can you tell me about pricing?'
 
 export async function main() {
   // Load the data
-  const loader = new CheerioWebBaseLoader('http://mountaindonuts.com')
+  const loader = new PDFLoader(path.resolve(__dirname, '../delete-later.pdf'), {
+    splitPages: true,
+    parsedItemSeparator: '\n\n'
+  })
   const docs = await loader.load()
 
   // Split the data into chunks
   const splitter = new RecursiveCharacterTextSplitter({
+    separators: ['\n\n', '\n', '.', '!', '?', ';'],
     chunkSize: 1000,
     chunkOverlap: 200
   })
   const splitDocs = await splitter.splitDocuments(docs)
 
   // Create the vector store
-  const vectorStore = new MemoryVectorStore(new OpenAIEmbeddings())
-  await vectorStore.addDocuments(splitDocs)
+  const vectorStore = await Chroma.fromDocuments(
+    splitDocs,
+    new OpenAIEmbeddings(),
+    {
+      collectionName: 'documents',
+      url: 'http://localhost:8000'
+    }
+  )
 
   // Create the retrieval
   const retriever = vectorStore.asRetriever({

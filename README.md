@@ -296,14 +296,69 @@
 
 ## LangChain
 
-- LangChain is a framework for building LLM based applications
-- LangChain libraries:
-  - Interface and integration for components
-- Implement Abstractions:
-  - Chains - chain commands
-  - Agents - use an LLM to make decisions
-- Agents:
-  - Decide: identify decision path
-  - Web: (Google, wiki, sport site)
-  - Unstructured answer
-  - LLM
+- Framework for developing LLM-powered applications
+- Core components:
+  - Models: Interface with various LLMs (OpenAI, Anthropic, etc.)
+  - Prompts: Template and manage model inputs
+  - Memory: Maintain conversation state and history
+  - Chains: Combine multiple operations
+  - Tools: External function integrations
+  - Agents: Autonomous decision-making systems
+- Key features:
+  - Modular architecture for component reuse
+  - Built-in integrations with popular services
+  - TypeScript/JavaScript support
+  - Streaming responses
+  - Error handling and retry logic
+- Common patterns:
+  - Question-answering over documents
+  - Chatbots with memory
+  - Structured output generation
+  - Tool-augmented agents
+  - Document analysis and summarization
+- Agent types:
+  - ReAct: Reason and Action framework
+  - OpenAI Functions: Uses function calling
+  - Plan-and-Execute: Multi-step planning
+  - XML: Structured output format
+- Best practices:
+  - Use streaming for better UX
+  - Implement proper error handling
+  - Cache results when possible
+  - Monitor token usage
+  - Test agent behaviors thoroughly
+
+### Retrieval-Augmented Generation (RAG)
+
+- Architecture for enhancing LLM responses with external knowledge
+- Key components:
+  - Document processors: Convert various formats (PDF, HTML, etc.)
+  - Text splitters: Chunk documents into manageable sizes
+  - Embedding models: Convert text to vector representations
+  - Vector stores: Index and retrieve relevant content
+  - LLM: Generate final responses
+- Process flow:
+  1. Ingest and process documents
+  2. Generate embeddings for chunks
+  3. Store vectors in database
+  4. Retrieve relevant context for queries
+  5. Augment LLM prompt with context
+  6. Generate accurate, sourced responses
+- Benefits:
+  - Up-to-date information beyond training data
+  - Reduced hallucination
+  - Verifiable sources
+  - Domain-specific knowledge
+  - Cost-effective vs fine-tuning
+- Implementation considerations:
+  - Chunk size optimization
+  - Embedding model selection
+  - Vector store scalability
+  - Prompt engineering
+  - Response synthesis
+- Use cases:
+  - Enterprise knowledge bases
+  - Documentation search
+  - Customer support
+  - Research assistance
+  - Educational tools

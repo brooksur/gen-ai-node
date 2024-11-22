@@ -1,23 +1,28 @@
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai'
 import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 import { ChatPromptTemplate } from '@langchain/core/prompts'
-import { CheerioWebBaseLoader } from '@langchain/community/document_loaders/web/cheerio'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
+import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf'
+import path from 'path'
 
 const model = new ChatOpenAI({
   modelName: 'gpt-4o-mini',
   temperature: 0.7
 })
 
-const question = 'What is a mountain donut?'
+const question = 'Can you tell me about pricing?'
 
 export async function main() {
   // Load the data
-  const loader = new CheerioWebBaseLoader('http://mountaindonuts.com')
+  const loader = new PDFLoader(path.resolve(__dirname, '../delete-later.pdf'), {
+    splitPages: true,
+    parsedItemSeparator: '\n\n'
+  })
   const docs = await loader.load()
 
   // Split the data into chunks
   const splitter = new RecursiveCharacterTextSplitter({
+    separators: ['\n\n', '\n', '.', '!', '?', ';'],
     chunkSize: 1000,
     chunkOverlap: 200
   })
